@@ -1,0 +1,125 @@
+[2014-09-27 08:29:06,470: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2014-09-27 08:29:06,502: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2014-09-27 08:29:06,517: INFO/MainProcess] mingle: searching for neighbors
+[2014-09-27 08:29:07,576: INFO/MainProcess] mingle: all alone
+[2014-09-27 08:29:07,597: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/fixups/django.py:254: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2014-09-27 08:29:07,597: WARNING/MainProcess] w1@madan-Ideapad-Z560 ready.
+[2014-09-27 08:37:57,487: INFO/MainProcess] Received task: pig_engine.tasks.add[52adecf0-386d-4669-a282-e8414ef13127]
+[2014-09-27 08:37:57,489: INFO/MainProcess] Task pig_engine.tasks.add[52adecf0-386d-4669-a282-e8414ef13127] succeeded in 0.00145766800051s: 4
+[2014-09-27 08:38:07,211: INFO/MainProcess] Received task: pig_engine.tasks.add[c3fef096-aba8-4a91-9226-b102004b9168]
+[2014-09-27 08:38:07,214: INFO/MainProcess] Task pig_engine.tasks.add[c3fef096-aba8-4a91-9226-b102004b9168] succeeded in 0.00140839100095s: 4
+[2014-09-27 08:40:19,622: INFO/MainProcess] Received task: pig_engine.tasks.add[62b7bec3-c9bb-4f39-a87c-c1381629fba9]
+[2014-09-27 08:40:19,624: INFO/MainProcess] Task pig_engine.tasks.add[62b7bec3-c9bb-4f39-a87c-c1381629fba9] succeeded in 0.00143338900125s: 4
+[2014-09-27 08:50:18,592: INFO/MainProcess] Received task: pig_engine.tasks.add[44d23bdc-e129-4de3-9fa7-e6234f8d2313]
+[2014-09-27 08:50:18,594: INFO/MainProcess] Task pig_engine.tasks.add[44d23bdc-e129-4de3-9fa7-e6234f8d2313] succeeded in 0.00129863599977s: 4
+[2014-09-27 08:50:19,083: INFO/MainProcess] Received task: pig_engine.tasks.add[53b1042b-2a64-4148-bbc4-a20f5f30f92d]
+[2014-09-27 08:50:19,085: INFO/MainProcess] Task pig_engine.tasks.add[53b1042b-2a64-4148-bbc4-a20f5f30f92d] succeeded in 0.00105610299943s: 4
+[2014-09-27 08:50:19,507: INFO/MainProcess] Received task: pig_engine.tasks.add[38cb63d4-25f8-460b-a859-1532d35052ed]
+[2014-09-27 08:50:19,509: INFO/MainProcess] Task pig_engine.tasks.add[38cb63d4-25f8-460b-a859-1532d35052ed] succeeded in 0.00103175099866s: 4
+[2014-09-27 08:50:19,924: INFO/MainProcess] Received task: pig_engine.tasks.add[a959fd53-8a7c-4f60-bb3f-dcc758cb5d13]
+[2014-09-27 08:50:19,926: INFO/MainProcess] Task pig_engine.tasks.add[a959fd53-8a7c-4f60-bb3f-dcc758cb5d13] succeeded in 0.000706793000063s: 4
+[2014-09-27 08:50:20,321: INFO/MainProcess] Received task: pig_engine.tasks.add[a20aa2c1-d64c-4a4c-bccf-b11a2a39ffec]
+[2014-09-27 08:50:20,323: INFO/MainProcess] Task pig_engine.tasks.add[a20aa2c1-d64c-4a4c-bccf-b11a2a39ffec] succeeded in 0.000772168001276s: 4
+[2014-09-27 08:50:20,719: INFO/MainProcess] Received task: pig_engine.tasks.add[643dcf72-ee9c-4ceb-a0b6-bcd30cdd1ce1]
+[2014-09-27 08:50:20,721: INFO/MainProcess] Task pig_engine.tasks.add[643dcf72-ee9c-4ceb-a0b6-bcd30cdd1ce1] succeeded in 0.000823760999992s: 4
+[2014-09-27 08:50:21,113: INFO/MainProcess] Received task: pig_engine.tasks.add[6b5c939c-3d00-4b18-a3d6-57d0048752fe]
+[2014-09-27 08:50:21,115: INFO/MainProcess] Task pig_engine.tasks.add[6b5c939c-3d00-4b18-a3d6-57d0048752fe] succeeded in 0.000997768000161s: 4
+[2014-09-27 08:50:21,511: INFO/MainProcess] Received task: pig_engine.tasks.add[ca63d73c-43a8-4fed-bc68-5a751faacbce]
+[2014-09-27 08:50:21,513: INFO/MainProcess] Task pig_engine.tasks.add[ca63d73c-43a8-4fed-bc68-5a751faacbce] succeeded in 0.00112619300126s: 4
+[2014-09-27 08:50:28,697: INFO/MainProcess] Received task: pig_engine.tasks.add[7e260426-154d-49f5-a1b5-09d67a79030d]
+[2014-09-27 08:50:28,700: INFO/MainProcess] Task pig_engine.tasks.add[7e260426-154d-49f5-a1b5-09d67a79030d] succeeded in 0.00100502900023s: 4
+[2014-09-27 08:52:53,404: INFO/MainProcess] Received task: pig_engine.tasks.add[af67509b-2787-40a5-a80c-6653876442a9]
+[2014-09-27 08:52:53,406: INFO/MainProcess] Task pig_engine.tasks.add[af67509b-2787-40a5-a80c-6653876442a9] succeeded in 0.000812564998341s: 4
+[2014-09-27 09:01:45,010: INFO/MainProcess] Received task: pig_engine.tasks.add[60502d00-8c15-4726-92fc-6f173db8c8d4]
+[2014-09-27 09:01:45,012: INFO/MainProcess] Task pig_engine.tasks.add[60502d00-8c15-4726-92fc-6f173db8c8d4] succeeded in 0.000973410998995s: 4
+[2014-09-27 09:05:28,561: INFO/MainProcess] Received task: pig_engine.tasks.add[1ff62f34-b33d-4666-9dd1-ca1b6e69af28]
+[2014-09-27 09:05:28,562: INFO/MainProcess] Task pig_engine.tasks.add[1ff62f34-b33d-4666-9dd1-ca1b6e69af28] succeeded in 0.00062515800164s: 4
+[2014-09-27 09:10:38,737: INFO/MainProcess] Received task: pig_engine.tasks.add[57e685ec-f48e-4096-b442-51286d3bcd54]
+[2014-09-27 09:10:38,739: INFO/MainProcess] Task pig_engine.tasks.add[57e685ec-f48e-4096-b442-51286d3bcd54] succeeded in 0.00102423299904s: 4
+[2014-09-27 09:14:03,445: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2014-09-27 09:14:03,475: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2014-09-27 09:14:03,488: INFO/MainProcess] mingle: searching for neighbors
+[2014-09-27 09:14:04,546: INFO/MainProcess] mingle: all alone
+[2014-09-27 09:14:04,571: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/fixups/django.py:254: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2014-09-27 09:14:04,572: WARNING/MainProcess] w1@madan-Ideapad-Z560 ready.
+[2014-09-27 09:14:13,784: INFO/MainProcess] Received task: pig_engine.tasks.add[4ee23b4a-0787-4472-aa5c-2472105a671d]
+[2014-09-27 09:14:14,788: INFO/MainProcess] Task pig_engine.tasks.add[4ee23b4a-0787-4472-aa5c-2472105a671d] succeeded in 1.002612433s: 4
+[2014-09-27 11:17:49,367: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/celery/worker/consumer.py", line 278, in start
+    blueprint.start(self)
+  File "/usr/local/lib/python2.7/dist-packages/celery/bootsteps.py", line 123, in start
+    step.start(parent)
+  File "/usr/local/lib/python2.7/dist-packages/celery/worker/consumer.py", line 821, in start
+    c.loop(*c.loop_args())
+  File "/usr/local/lib/python2.7/dist-packages/celery/worker/loops.py", line 70, in asynloop
+    next(loop)
+  File "/usr/local/lib/python2.7/dist-packages/kombu/async/hub.py", line 324, in create_loop
+    cb(*cbargs)
+  File "/usr/local/lib/python2.7/dist-packages/kombu/transport/base.py", line 162, in on_readable
+    reader(loop)
+  File "/usr/local/lib/python2.7/dist-packages/kombu/transport/base.py", line 144, in _read
+    drain_events(timeout=0)
+  File "/usr/local/lib/python2.7/dist-packages/amqp/connection.py", line 323, in drain_events
+    return amqp_method(channel, args)
+  File "/usr/local/lib/python2.7/dist-packages/amqp/connection.py", line 526, in _close
+    self._x_close_ok()
+  File "/usr/local/lib/python2.7/dist-packages/amqp/connection.py", line 554, in _x_close_ok
+    self._send_method((10, 51))
+  File "/usr/local/lib/python2.7/dist-packages/amqp/abstract_channel.py", line 56, in _send_method
+    self.channel_id, method_sig, args, content,
+  File "/usr/local/lib/python2.7/dist-packages/amqp/method_framing.py", line 221, in write_method
+    write_frame(1, channel, payload)
+  File "/usr/local/lib/python2.7/dist-packages/amqp/transport.py", line 182, in write_frame
+    frame_type, channel, size, payload, 0xce,
+  File "/usr/lib/python2.7/socket.py", line 224, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 104] Connection reset by peer
+[2014-09-27 11:17:49,766: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 2.00 seconds...
+
+[2014-09-27 11:17:51,778: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 4.00 seconds...
+
