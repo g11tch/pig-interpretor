@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djcelery',
+    'xframeoptions',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -52,7 +53,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'xframeoptions.middleware.Header',
 )
+
 
 ROOT_URLCONF = 'pig_engine.urls'
 
@@ -82,6 +85,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+X_FRAME_OPTIONS = 'ALLOWALL'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/

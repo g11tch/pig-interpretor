@@ -37,7 +37,8 @@
 		<textarea id="code" name="code" ></textarea>
 		<br>
 		<button class="btn btn-default" onclick="runIt()" >run script</button>
-		<button class="btn btn-default" onclick="stopIt()" >Stop All</button>
+		<div id='tasks'>
+		</div>
 		<script>
 			count = 0;
 			var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
@@ -63,7 +64,20 @@
 				      'code': editor.getValue() // look here!
 				    },
 				    success: function(data) {
-				    	alert(data);
+				    	tasksContainer = document.getElementById('tasks');
+				    	pre = document.createElement("pre");
+				    	tasksContainer.appendChild(pre);
+				    	pre.setAttribute("id", data["task_id"]);
+				    	pre.setAttribute("class", "makeItCool");
+				    	button = document.createElement("button");
+				    	pre.appendChild(button);
+				    	button.setAttribute("class", "btn btn-default");
+				    	button.setAttribute("onclick", "stopIt(\""+data["task_id"]+"\",\""+data["pid"]+"\")");
+				    	button.innerHTML = "Stop All";
+				    	p = document.createElement("p");
+				    	pre.appendChild(p);
+				    	p.innerHTML = "task_id: "+data["task_id"];
+				    	console.log(data);
 				    	count = count+1;
 				    },
 				    error: function(xhr,err) {
@@ -72,26 +86,32 @@
 				});
 			}
 
-			function stopIt() {
-			    var xmlhttp;
-			    if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
-			        xmlhttp = new XMLHttpRequest();
-			    } else { // code for IE6, IE5
-			        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			    }
-			    xmlhttp.onreadystatechange = function() {
-			        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			            alert('sucessfuly stoped');
-			        }
-			    }
-			    xmlhttp.open("GET", "grunt-stop", true);
-			    xmlhttp.send();
+			function stopIt(task_id, pid) {
+				element = document.getElementById(task_id);
+				$.ajax({
+				    type: 'POST', // it's easier to read GET request parameters
+				    url: 'request_server',
+				    dataType: 'JSON',
+				    data: {
+				      'type':'kill',
+				      'job_id': count+1,
+				      'task_id': task_id,
+				      'pid': pid
+				    },
+				    success: function(data) {
+				    	count = count+1;
+				    	element.remove();
+				    },
+				    error: function(xhr,err) {
+				        alert(err);
+				    }
+				});
 			}
 	    </script>
 </body>
 </html>
 
 <pre>
-	A = LOAD '/twitter_out' USING PigStorage();
+	A = LOAD '/test' USING PigStorage();
 	DUMP A ;
 </pre>

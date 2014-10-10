@@ -1,0 +1,6 @@
+	A = LOAD '/test' USING PigStorage();
+	DUMP A ;
+
+celery -A pig_engine worker -l info
+
+python manage.py runserver
