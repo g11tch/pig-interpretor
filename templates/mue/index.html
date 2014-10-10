@@ -73,7 +73,7 @@
 				    	pre.appendChild(button);
 				    	button.setAttribute("class", "btn btn-default");
 				    	button.setAttribute("onclick", "stopIt(\""+data["task_id"]+"\",\""+data["pid"]+"\")");
-				    	button.innerHTML = "Stop All";
+				    	button.innerHTML = "Stop This";
 				    	p = document.createElement("p");
 				    	pre.appendChild(p);
 				    	p.innerHTML = "task_id: "+data["task_id"];
@@ -111,7 +111,7 @@
 </body>
 </html>
 
-<pre>
+<!--pre>
 	A = LOAD '/test' USING PigStorage();
 	DUMP A ;
-</pre>
+</pre-->
