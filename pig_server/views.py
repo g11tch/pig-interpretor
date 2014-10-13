@@ -16,7 +16,11 @@ def pig_server_main(request):
 		if request.POST.get('type') == 'start':
 			code = re.sub('SigmaStream','Pig',code)
 			code = re.sub('sigmaStream','pig',code)
-			result = tasks.run.delay(code)
+			kmeanList = re.findall(r'kmean\([^\)]*\)' ,code)
+			if len(kmeanList) == 0:
+				result = tasks.run.delay(code)
+			else:
+				result = tasks.runKmean.delay(kmeanList[0])
 			time.sleep(5)
 			fPid = open("/tmp/pig-engine/pids/pid-"+result.id)
 			pid = int(fPid.read())
@@ -35,9 +39,9 @@ def pig_server_main(request):
 				os.remove('/tmp/pig-engine/task_id/'+task_id)
 			except Exception:
 				jsonData = json.dumps({'task_id':task_id, 'pid':pid, 'status':'FAILED', 'message':'your task is been killed'})
-			#os.remove('/tmp/pig-engine/pids/pid-'+task_id)
-			#os.remove('/tmp/pig-engine/logs/status-'+task_id)
-			#os.remove('/tmp/pig-engine/scripts/scripts-'+task_id+'.pig')
+			os.remove('/tmp/pig-engine/pids/pid-'+task_id)
+			os.remove('/tmp/pig-engine/logs/status-'+task_id)
+			os.remove('/tmp/pig-engine/scripts/scripts-'+task_id+'.pig')
 		else:
 			"ACCEPTED REQUEST: [start|lookin|kill]"
 	return HttpResponse(jsonData, mimetype='application/json')

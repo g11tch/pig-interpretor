@@ -36,3 +36,12 @@ def run(self, code):
 	#result = process.communicate(code+'\n')
 	#process.wait()
 	return process
+
+
+@app.task(bind=True)
+def runKmean(self, code):
+	fwOut = open('/tmp/pig-engine/logs/status-'+self.request.id , 'w')
+	fwPid = open('/tmp/pig-engine/pids/pid-'+self.request.id , 'w')
+	process = subprocess.Popen(['ls'],stdin=None,stdout=fwOut, stderr=fwOut)
+	print >> fwPid, process.pid
+	fwPid.close()
