@@ -44,4 +44,4 @@ def pig_server_main(request):
 			os.remove('/tmp/pig-engine/scripts/scripts-'+task_id+'.pig')
 		else:
 			"ACCEPTED REQUEST: [start|lookin|kill]"
-	return HttpResponse(jsonData, mimetype='application/json')
+	return HttpResponse(jsonData, content_type='application/json')
