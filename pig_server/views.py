@@ -18,11 +18,10 @@ def pig_server_main(request):
 			code = re.sub('sigmaStream','pig',code)
 			kmeanList = re.findall(r'kmean\([^\)]*\)' ,code)
 			result = tasks.run.delay(code)
-			print result
-			# if len(kmeanList) == 0:
-			# 	result = tasks.run.delay(code)
-			# else:
-			# 	result = tasks.runKmean.delay(kmeanList[0])
+			if len(kmeanList) == 0:
+				result = tasks.run.delay(code)
+			else:
+				result = tasks.runKmean.delay(kmeanList[0])
 			time.sleep(5)
 			fPid = open("/tmp/pig-engine/pids/pid-"+result.id)
 			pid = int(fPid.read())

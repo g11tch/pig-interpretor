@@ -38,25 +38,25 @@ def run(self, code):
 	return process
 
 
-# @app.task(bind=True)
-# def runKmean(self, code):
-# 		directory = "/tmp/pig-engine"
-# 	if not os.path.exists(directory):
-# 		os.makedirs(directory)
-# 	directoryLogs = directory+"/logs"
-# 	if not os.path.exists(directoryLogs):
-# 		os.makedirs(directoryLogs)
-# 	directoryscripts = directory+"/scripts"
-# 	if not os.path.exists(directoryscripts):
-# 		os.makedirs(directoryscripts)
-# 	directoryscripts = directory+"/pids"
-# 	if not os.path.exists(directoryscripts):
-# 		os.makedirs(directoryscripts)
-# 	directoryscripts = directory+"/task_id"
-# 	if not os.path.exists(directoryscripts):
-# 		os.makedirs(directoryscripts)
-# 	fwOut = open('/tmp/pig-engine/logs/status-'+self.request.id , 'w')
-# 	fwPid = open('/tmp/pig-engine/pids/pid-'+self.request.id , 'w')
-# 	process = subprocess.Popen(['ls'],stdin=None,stdout=fwOut, stderr=fwOut)
-# 	print >> fwPid, process.pid
-# 	fwPid.close()
+@app.task(bind=True)
+def runKmean(self, code):
+		directory = "/tmp/pig-engine"
+	if not os.path.exists(directory):
+		os.makedirs(directory)
+	directoryLogs = directory+"/logs"
+	if not os.path.exists(directoryLogs):
+		os.makedirs(directoryLogs)
+	directoryscripts = directory+"/scripts"
+	if not os.path.exists(directoryscripts):
+		os.makedirs(directoryscripts)
+	directoryscripts = directory+"/pids"
+	if not os.path.exists(directoryscripts):
+		os.makedirs(directoryscripts)
+	directoryscripts = directory+"/task_id"
+	if not os.path.exists(directoryscripts):
+		os.makedirs(directoryscripts)
+	fwOut = open('/tmp/pig-engine/logs/status-'+self.request.id , 'w')
+	fwPid = open('/tmp/pig-engine/pids/pid-'+self.request.id , 'w')
+	process = subprocess.Popen(['ls'],stdin=None,stdout=fwOut, stderr=fwOut)
+	print >> fwPid, process.pid
+	fwPid.close()
