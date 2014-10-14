@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'djcelery',
     'xframeoptions',
+    'corsheaders',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -54,8 +55,12 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'xframeoptions.middleware.Header',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 )
 
+
+CORS_ORIGIN_REGEX_WHITELIST = ('^(https?://)?(\w+\.)?130.211.117.186.*$', )
 
 ROOT_URLCONF = 'pig_engine.urls'
 
