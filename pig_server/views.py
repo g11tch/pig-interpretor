@@ -18,6 +18,7 @@ def pig_server_main(request):
 			code = re.sub('sigmaStream','pig',code)
 			kmeanList = re.findall(r'kmean\([^\)]*\)' ,code)
 			result = tasks.run.delay(code)
+			print result
 			# if len(kmeanList) == 0:
 			# 	result = tasks.run.delay(code)
 			# else:
