@@ -40,9 +40,12 @@ def pig_server_main(request):
 				os.remove('/tmp/pig-engine/task_id/'+task_id)
 			except Exception:
 				jsonData = json.dumps({'task_id':task_id, 'pid':pid, 'status':'FAILED', 'message':'your task is been killed'})
-			os.remove('/tmp/pig-engine/pids/pid-'+task_id)
-			os.remove('/tmp/pig-engine/logs/status-'+task_id)
-			os.remove('/tmp/pig-engine/scripts/scripts-'+task_id+'.pig')
+			try:
+				os.remove('/tmp/pig-engine/pids/pid-'+task_id)
+				os.remove('/tmp/pig-engine/logs/status-'+task_id)
+				os.remove('/tmp/pig-engine/scripts/scripts-'+task_id+'.pig')
+			except Exception:
+				pass
 		else:
 			"ACCEPTED REQUEST: [start|lookin|kill]"
 	return HttpResponse(jsonData, content_type='application/json')
