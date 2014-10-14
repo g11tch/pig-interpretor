@@ -1,0 +1,174 @@
+Pig Stack Trace
+---------------
+ERROR 1200: <line 8, column 59>  mismatched input 'kmeans' expecting SEMI_COLON
+
+Failed to parse: <line 8, column 59>  mismatched input 'kmeans' expecting SEMI_COLON
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:233)
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:174)
+	at org.apache.pig.PigServer$Graph.validateQuery(PigServer.java:1639)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1612)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:569)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:1032)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:499)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:194)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:170)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:69)
+	at org.apache.pig.Main.run(Main.java:555)
+	at org.apache.pig.Main.main(Main.java:163)
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1200: Pig script failed to parse: 
+<line 8, column 19> Undefined alias: B
+
+Failed to parse: Pig script failed to parse: 
+<line 8, column 19> Undefined alias: B
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:189)
+	at org.apache.pig.PigServer$Graph.validateQuery(PigServer.java:1639)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1612)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:569)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:1032)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:499)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:194)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:170)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:69)
+	at org.apache.pig.Main.run(Main.java:555)
+	at org.apache.pig.Main.main(Main.java:163)
+Caused by: 
+<line 8, column 19> Undefined alias: B
+	at org.apache.pig.parser.AstValidator.validateAliasRef(AstValidator.java:273)
+	at org.apache.pig.parser.AstValidator.rel(AstValidator.java:6341)
+	at org.apache.pig.parser.AstValidator.filter_clause(AstValidator.java:6942)
+	at org.apache.pig.parser.AstValidator.op_clause(AstValidator.java:1498)
+	at org.apache.pig.parser.AstValidator.general_statement(AstValidator.java:850)
+	at org.apache.pig.parser.AstValidator.statement(AstValidator.java:487)
+	at org.apache.pig.parser.AstValidator.query(AstValidator.java:368)
+	at org.apache.pig.parser.QueryParserDriver.validateAst(QueryParserDriver.java:247)
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:178)
+	... 10 more
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1200: Pig script failed to parse: 
+<line 8, column 23> Undefined alias: hash_tags
+
+Failed to parse: Pig script failed to parse: 
+<line 8, column 23> Undefined alias: hash_tags
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:189)
+	at org.apache.pig.PigServer$Graph.validateQuery(PigServer.java:1639)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1612)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:569)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:1032)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:499)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:194)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:170)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:69)
+	at org.apache.pig.Main.run(Main.java:555)
+	at org.apache.pig.Main.main(Main.java:163)
+Caused by: 
+<line 8, column 23> Undefined alias: hash_tags
+	at org.apache.pig.parser.AstValidator.validateAliasRef(AstValidator.java:273)
+	at org.apache.pig.parser.AstValidator.rel(AstValidator.java:6341)
+	at org.apache.pig.parser.AstValidator.group_item(AstValidator.java:6086)
+	at org.apache.pig.parser.AstValidator.group_clause(AstValidator.java:5873)
+	at org.apache.pig.parser.AstValidator.op_clause(AstValidator.java:1458)
+	at org.apache.pig.parser.AstValidator.general_statement(AstValidator.java:850)
+	at org.apache.pig.parser.AstValidator.statement(AstValidator.java:487)
+	at org.apache.pig.parser.AstValidator.query(AstValidator.java:368)
+	at org.apache.pig.parser.QueryParserDriver.validateAst(QueryParserDriver.java:247)
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:178)
+	... 10 more
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1200: Pig script failed to parse: 
+<line 8, column 20> Undefined alias: group_hash_tag
+
+Failed to parse: Pig script failed to parse: 
+<line 8, column 20> Undefined alias: group_hash_tag
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:189)
+	at org.apache.pig.PigServer$Graph.validateQuery(PigServer.java:1639)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1612)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:569)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:1032)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:499)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:194)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:170)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:69)
+	at org.apache.pig.Main.run(Main.java:555)
+	at org.apache.pig.Main.main(Main.java:163)
+Caused by: 
+<line 8, column 20> Undefined alias: group_hash_tag
+	at org.apache.pig.parser.AstValidator.validateAliasRef(AstValidator.java:273)
+	at org.apache.pig.parser.AstValidator.rel(AstValidator.java:6341)
+	at org.apache.pig.parser.AstValidator.foreach_clause(AstValidator.java:13583)
+	at org.apache.pig.parser.AstValidator.op_clause(AstValidator.java:1758)
+	at org.apache.pig.parser.AstValidator.general_statement(AstValidator.java:850)
+	at org.apache.pig.parser.AstValidator.statement(AstValidator.java:487)
+	at org.apache.pig.parser.AstValidator.query(AstValidator.java:368)
+	at org.apache.pig.parser.QueryParserDriver.validateAst(QueryParserDriver.java:247)
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:178)
+	... 10 more
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1200: Pig script failed to parse: 
+<line 8, column 20> Undefined alias: get_count
+
+Failed to parse: Pig script failed to parse: 
+<line 8, column 20> Undefined alias: get_count
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:189)
+	at org.apache.pig.PigServer$Graph.validateQuery(PigServer.java:1639)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1612)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:569)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:1032)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:499)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:194)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:170)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:69)
+	at org.apache.pig.Main.run(Main.java:555)
+	at org.apache.pig.Main.main(Main.java:163)
+Caused by: 
+<line 8, column 20> Undefined alias: get_count
+	at org.apache.pig.parser.AstValidator.validateAliasRef(AstValidator.java:273)
+	at org.apache.pig.parser.AstValidator.rel(AstValidator.java:6341)
+	at org.apache.pig.parser.AstValidator.order_clause(AstValidator.java:11712)
+	at org.apache.pig.parser.AstValidator.op_clause(AstValidator.java:1598)
+	at org.apache.pig.parser.AstValidator.general_statement(AstValidator.java:850)
+	at org.apache.pig.parser.AstValidator.statement(AstValidator.java:487)
+	at org.apache.pig.parser.AstValidator.query(AstValidator.java:368)
+	at org.apache.pig.parser.QueryParserDriver.validateAst(QueryParserDriver.java:247)
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:178)
+	... 10 more
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1200: Pig script failed to parse: 
+<line 8, column 6> Undefined alias: ordered_res
+
+Failed to parse: Pig script failed to parse: 
+<line 8, column 6> Undefined alias: ordered_res
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:189)
+	at org.apache.pig.PigServer$Graph.validateQuery(PigServer.java:1639)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1612)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:569)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:1032)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:499)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:194)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:170)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:69)
+	at org.apache.pig.Main.run(Main.java:555)
+	at org.apache.pig.Main.main(Main.java:163)
+Caused by: 
+<line 8, column 6> Undefined alias: ordered_res
+	at org.apache.pig.parser.AstValidator.validateAliasRef(AstValidator.java:273)
+	at org.apache.pig.parser.AstValidator.rel(AstValidator.java:6341)
+	at org.apache.pig.parser.AstValidator.store_clause(AstValidator.java:6815)
+	at org.apache.pig.parser.AstValidator.op_clause(AstValidator.java:1478)
+	at org.apache.pig.parser.AstValidator.general_statement(AstValidator.java:850)
+	at org.apache.pig.parser.AstValidator.statement(AstValidator.java:487)
+	at org.apache.pig.parser.AstValidator.query(AstValidator.java:368)
+	at org.apache.pig.parser.QueryParserDriver.validateAst(QueryParserDriver.java:247)
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:178)
+	... 10 more
+================================================================================

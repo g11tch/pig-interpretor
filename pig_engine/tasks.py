@@ -57,6 +57,8 @@ def runKmean(self, code):
 		os.makedirs(directoryscripts)
 	fwOut = open('/tmp/pig-engine/logs/status-'+self.request.id , 'w')
 	fwPid = open('/tmp/pig-engine/pids/pid-'+self.request.id , 'w')
-	process = subprocess.Popen(['ls'],stdin=None,stdout=fwOut, stderr=fwOut)
+	v1, v2 = code[7:-1].split(',')
+	print v2, v2
+	process = subprocess.Popen(['mlsbt','"run '+v1+' '+v2+'"'],stdin=None,stdout=fwOut, stderr=fwOut)
 	print >> fwPid, process.pid
 	fwPid.close()

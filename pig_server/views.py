@@ -16,8 +16,8 @@ def pig_server_main(request):
 		if request.POST.get('type') == 'start':
 			code = re.sub('SigmaStream','Pig',code)
 			code = re.sub('sigmaStream','pig',code)
-			kmeanList = re.findall(r'kmean\([^\)]*\)' ,code)
-			result = tasks.run.delay(code)
+			kmeanList = re.findall(r'kmeans\([^\)]*\)' ,code)
+			#result = tasks.run.delay(code)
 			if len(kmeanList) == 0:
 				result = tasks.run.delay(code)
 			else:
