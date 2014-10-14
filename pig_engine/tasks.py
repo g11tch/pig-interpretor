@@ -40,7 +40,7 @@ def run(self, code):
 
 @app.task(bind=True)
 def runKmean(self, code):
-		directory = "/tmp/pig-engine"
+	directory = "/tmp/pig-engine"
 	if not os.path.exists(directory):
 		os.makedirs(directory)
 	directoryLogs = directory+"/logs"
