@@ -63,5 +63,5 @@ def runKmean(self, code):
 	process = subprocess.Popen(['runkmeans' , v1, v2],stdin=None,stdout=fwOut, stderr=fwOut)
 	parent = psutil.Process(process.pid)
 	print process.pid, parent.children(recursive=True)
-	print >> fwPid, process.pid
+	print >> fwPid, parent.children(recursive=True)[0]
 	fwPid.close()
