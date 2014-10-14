@@ -59,6 +59,7 @@ def runKmean(self, code):
 	fwPid = open('/tmp/pig-engine/pids/pid-'+self.request.id , 'w')
 	v1, v2 = code[7:-1].split(',')
 	print v2, v2
-	process = subprocess.Popen(['mlsbt','"run '+v1+' '+v2+'"'],stdin=None,stdout=fwOut, stderr=fwOut)
+	process = subprocess.Popen(['runkmeans' , v1, v2],stdin=None,stdout=fwOut, stderr=fwOut)
+	print process.pid
 	print >> fwPid, process.pid
 	fwPid.close()
