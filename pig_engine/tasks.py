@@ -4,6 +4,7 @@ from pig_engine.celery import app
 import time
 import subprocess
 import os
+import psutil
 
 @app.task(bind=True)
 def run(self, code):
@@ -60,6 +61,6 @@ def runKmean(self, code):
 	v1, v2 = code[7:-1].split(',')
 	print v2, v2
 	process = subprocess.Popen(['runkmeans' , v1, v2],stdin=None,stdout=fwOut, stderr=fwOut)
-	print process.pid
+	print process.pid, parent.children(recursive=True)
 	print >> fwPid, process.pid
 	fwPid.close()
