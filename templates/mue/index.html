@@ -38,6 +38,8 @@
 		<button class="btn btn-default" onclick="runIt()" >run script</button>
 		<div id='tasks'>
 		</div>
+		<div id='running_job'>
+		</div>
 		<script>
 			count = 0;
 			var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
@@ -107,6 +109,41 @@
 				});
 			}
 	    </script>
+
+	     <script type="text/javascript">
+		    window.onload = function () { 
+		    	$.ajax({
+				    type: 'POST', // it's easier to read GET request parameters
+				    url: 'request_runner',
+				    dataType: 'JSON',
+				    data: {},
+				    success: function(dataList) {
+				   		console.log(dataList)
+				    	var running_job_pannels = document.getElementById('running_job');
+				    	for(i=0;i<dataList['jobs'].length;i++) {
+				    		data = dataList['jobs'][i];
+				    		pre = document.createElement("pre");
+				    		running_job_pannels.appendChild(pre);
+				    		pre.setAttribute("id", data["task_id"]);
+				    		pre.setAttribute("class", "makeItCool");
+				    		button = document.createElement("button");
+					    	pre.appendChild(button);
+					    	button.setAttribute("class", "btn btn-default");
+					    	button.setAttribute("onclick", "stopIt(\""+data["task_id"]+"\",\""+data["pid"]+"\")");
+					    	button.innerHTML = "Stop This";
+					    	p = document.createElement("p");
+					    	pre.appendChild(p);
+					    	p.innerHTML = "task_id: "+data["task_id"]+"<hr><h3>Script</h3>"+data["script"];
+					    	console.log(data);
+					    	count = count+1;
+				    	}
+				    },
+				    error: function(xhr,err) {
+				        alert(err);
+				    }
+				});
+		    }
+		</script>
 </body>
 </html>
 

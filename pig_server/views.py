@@ -7,6 +7,13 @@ import json
 import random
 from celery.task.control import revoke
 import re
+from os import listdir
+from os.path import isfile, join
+
+
+def get_files(mypath):
+	onlyfiles = [ f for f in listdir(mypath) if isfile(join(mypath,f)) ]
+	return onlyfiles
 
 @csrf_exempt
 def pig_server_main(request):
@@ -48,4 +55,29 @@ def pig_server_main(request):
 				pass
 		else:
 			"ACCEPTED REQUEST: [start|lookin|kill]"
+	return HttpResponse(jsonData, content_type='application/json')
+
+
+@csrf_exempt
+def pig_server_runner(request):
+	dataAll = []
+	try:
+		listOfFilePids = get_files("/tmp/pig-engine/pids/")
+		for task_id_name in listOfFilePids:
+			dataJob = {}
+			if task_id_name[0:4] == 'pid-':
+				task_id = task_id_name[4:]
+				dataJob['task_id'] = task_id
+				fScript = open('/tmp/pig-engine/scripts/scripts-'+task_id+'.pig')
+				dataJob['script'] = fScript.read()
+				fPid = open("/tmp/pig-engine/pids/"+task_id_name)
+				pid = int(fPid.read())
+				print pid
+				dataJob['pid'] = pid
+				dataAll.append(dataJob)
+	except Exception:
+		print "no job running"
+	jsonData = json.dumps({'jobs':dataAll})
+	#jsonData = {'hello_world':'testing'}
+	print jsonData
 	return HttpResponse(jsonData, content_type='application/json')
